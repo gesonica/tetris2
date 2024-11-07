@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://uq2orlwhadlf"]
+
+[ext_resource type="Script" path="res://Block1.cs" id="1_wwo85"]
+[ext_resource type="Texture2D" uid="uid://bnq2x1mmebf78" path="res://square_1.png" id="2_vvpwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n6qw"]
+size = Vector2(32, 32)
+
+[node name="Block1" type="Area2D"]
+script = ExtResource("1_wwo85")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vvpwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0n6qw")

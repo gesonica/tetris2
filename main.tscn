@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0lnetk7g8x0"]
+
+[ext_resource type="Script" path="res://GameField.cs" id="1_3jpal"]
+[ext_resource type="PackedScene" uid="uid://chxnxakgjvpco" path="res://current_tetromino.tscn" id="2_3wosl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17rnq"]
+
+[node name="Main" type="Node2D"]
+
+[node name="GameField" type="TileMapLayer" parent="."]
+script = ExtResource("1_3jpal")
+TetrominoScene = ExtResource("2_3wosl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GameField"]
+
+[node name="LeftWallCollision" type="CollisionShape2D" parent="GameField/StaticBody2D"]
+shape = SubResource("RectangleShape2D_17rnq")
+
+[node name="RightWallCollision" type="CollisionShape2D" parent="GameField/StaticBody2D"]
+shape = SubResource("RectangleShape2D_17rnq")
+
+[node name="TopWallCollision" type="CollisionShape2D" parent="GameField/StaticBody2D"]
+shape = SubResource("RectangleShape2D_17rnq")
+
+[node name="BottomWallCollision" type="CollisionShape2D" parent="GameField/StaticBody2D"]
+shape = SubResource("RectangleShape2D_17rnq")
+
+[node name="CurrentTetromino" parent="." instance=ExtResource("2_3wosl")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOverMessage" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true

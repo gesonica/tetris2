@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfy7wks3d8tly"]
+
+[ext_resource type="Script" path="res://Block4.cs" id="1_00vfj"]
+[ext_resource type="Texture2D" uid="uid://rg6hxg8p56i4" path="res://square_4.png" id="2_sh4qt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n6qw"]
+size = Vector2(32, 32)
+
+[node name="Block4" type="Area2D"]
+script = ExtResource("1_00vfj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sh4qt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0n6qw")
